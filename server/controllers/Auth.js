@@ -116,21 +116,21 @@ exports.signUp = async (req, res) => {
     //     });
     // }
 
-    const recentOtp = await OTP.find({ email })
-      .sort({ createdAt: -1 })
-      .limit(1);
+    // const recentOtp = await OTP.find({ email })
+    //   .sort({ createdAt: -1 })
+    //   .limit(1);
 
-    if (recentOtp.length === 0 || !recentOtp[0].otp) {
-      return res.status(400).json({
-        success: false,
-        message: "OTP Not Found",
-      });
-    } else if (otp !== recentOtp[0].otp) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid OTP",
-      });
-    }
+    // if (recentOtp.length === 0 || !recentOtp[0].otp) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "OTP Not Found",
+    //   });
+    // } else if (otp !== recentOtp[0].otp) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "Invalid OTP",
+    //   });
+    // }
 
     const hashedPwd = await bcrypt.hash(password, 10);
 
