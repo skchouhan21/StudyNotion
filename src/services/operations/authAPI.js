@@ -52,7 +52,7 @@ export function signUp(
   email,
   password,
   confirmPassword,
-  otp,
+  //otp,
   navigate
 ){
   return async (dispatch) => {
@@ -67,7 +67,7 @@ export function signUp(
         email,
         password,
         confirmPassword,
-        otp
+        //otp
       })
 
       console.log("SIGNUP_API RESPONSE............", response)
